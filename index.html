@@ -9,28 +9,68 @@
   </head>
   <body>
     <div class="container">
-      <div class="screen">
-        <div class="info">
-          <div class="info__text">Ingresar numero de tarjeta</div>
-          <div class="input"></div>
+      <div class="header">
+        <p class="header__text">Ingrese Tarjeta</p>
+      </div>
+      <div id="display">
+        <div id="menuPrincipal" class="noDisplay">
+          <div class="btn__container">
+            <button class="btn" onclick="menuRetiroDeSaldo()">Retiro</button>
+            <button class="btn" onclick="consultaSaldo()">Consulta</button>
+            <button class="btn" onclick="cambioDePin()">Cambio de Pin</button>
+          </div>
         </div>
-        <div class="options">
-          <div class="button" id="button1">1</div>
-          <div class="button" id="button2">2</div>
-          <div class="button" id="button3">3</div>
-          <div class="button" id="buttonOk">OK</div>
-          <div class="button" id="button4">4</div>
-          <div class="button" id="button5">5</div>
-          <div class="button" id="button6">6</div>
-          <div class="button" id="buttonCancel">CANCEL</div>
-          <div class="button" id="button7">7</div>
-          <div class="button" id="button8">8</div>
-          <div class="button" id="button9">9</div>
-          <div class="button" id="button0">0</div>
+        <div id="menuMoneda" class="noDisplay">
+          <div class="btn__container">
+            <button class="btn">Dolar</button>
+            <button class="btn">Quetzales</button>
+          </div>
+        </div>
+        <div id="menuRetiro" class="noDisplay">
+          <div class="btn__container">
+            <button class="btn" onclick="retirarMontoFijo(100)">100</button>
+            <button class="btn" onclick="retirarMontoFijo(500)">500</button>
+            <button class="btn" onclick="retirarMontoFijo(1000)">1000</button>
+            <button class="btn" onclick="retirarMontoFijo(2000)">2000</button>
+            <button class="btn" onclick="retirarMontoFijo(3000)">3000</button>
+            <button class="btn" onclick="menuRetiroVariable(this)">
+              Monto Variable
+            </button>
+          </div>
+        </div>
+        <div id="menuTipoMoneda" class="noDisplay">
+          <div class="btn__container">
+            <button class="btn" onclick="retirarQuetzales()">Quetzales</button>
+            <button class="btn" onclick="retirarDolares()">Dolar</button>
+          </div>
+        </div>
+        <div id="consulta" class="noDisplay">
+          <p id="montoQuetzal"></p>
+          <p id="montoDolar"></p>
         </div>
       </div>
+      <div id="inputContainer">
+        <input type="text" id="mainInput" />
+      </div>
+      <div id="inputOptions">
+        <button class="btn" onclick="ingresar(this)">Ingresar</button>
+        <button
+          class="btn"
+          onclick="cancelar(this)"
+          style="background-color: red"
+        >
+          Cancelar
+        </button>
+      </div>
+      <button
+        class="btn"
+        id="goBack"
+        onclick="regresar(this)"
+        style="display: none"
+      >
+        Regresar
+      </button>
     </div>
   </body>
   <script src="index.js"></script>
-
 </html>
